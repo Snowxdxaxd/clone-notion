@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Тетрадь — заметки с деревом страниц</title>
+  <meta property="og:title" content="Тетрадь — заметки с деревом страниц">
+  <meta property="og:description" content="Блочный редактор с вложенными страницами, слэш-командами и публичными ссылками только для чтения.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='1' y='1' width='30' height='30' rx='7' fill='%232383e2'/%3E%3Cpath d='M9 10.5h14M9 16h14M9 21.5h8' stroke='%23fff' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/css/style.css?v=1">
+</head>
+<body>
+  <!-- вход -->
+  <section id="login" hidden>
+    <form id="login-form" class="login-card" autocomplete="off">
+      <div class="login-logo"><svg viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"><path d="M9 10.5h14M9 16h14M9 21.5h8"/></svg></div>
+      <h1>Тетрадь</h1>
+      <p class="login-sub">Блочный редактор с деревом страниц</p>
+      <input id="login-name" placeholder="Имя" maxlength="32" required>
+      <button id="login-btn" class="btn primary" type="submit">Войти</button>
+      <p class="login-hint">Аккаунт создается по имени автоматически</p>
+    </form>
+  </section>
+
+  <!-- приложение -->
+  <div id="app" hidden>
+    <aside id="sidebar">
+      <div class="side-top">
+        <div class="workspace" id="workspace-name"></div>
+        <div id="user-name"></div>
+      </div>
+      <div class="side-search">
+        <span class="search-icon" id="search-icon"></span>
+        <input id="search-input" placeholder="Поиск" autocomplete="off">
+        <div id="search-results" hidden></div>
+      </div>
+      <nav id="page-tree"></nav>
+      <button id="root-add" type="button"></button>
+    </aside>
+    <main id="main">
+      <header id="topbar">
+        <button id="side-toggle" type="button" title="Страницы"></button>
+        <span id="save-indicator"></span>
+      </header>
+      <div id="editor-scroll">
+        <div id="editor">
+          <h1 id="page-title" contenteditable="true" data-ph="Без названия" spellcheck="false"></h1>
+          <div id="blocks"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- публичная страница -->
+  <section id="public" hidden>
+    <div class="public-wrap">
+      <div class="public-brand">Тетрадь</div>
+      <h1 id="public-title"></h1>
+      <div id="public-blocks"></div>
+      <div class="public-foot">Страница доступна только для чтения</div>
+    </div>
+  </section>
+
+  <div id="popup-root"></div>
+  <div id="toast-root"></div>
+  <script type="module" src="/js/main.js?v=1"></script>
+</body>
+</html>
