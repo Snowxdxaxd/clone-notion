@@ -1,5 +1,8 @@
 # Тетрадь
 
+**▶ Live demo:** https://demo-notion.onrender.com (free-инстанс Render: первый запрос будит сервис ~30–60 сек)
+
+
 Клон Notion для портфолио: блочный редактор с деревом вложенных страниц. Node 24, ESM, без сборки. SQLite (better-sqlite3), данные в `data/app.db`.
 
 ## Запуск
